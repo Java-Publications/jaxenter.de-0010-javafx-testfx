@@ -39,10 +39,14 @@
                 <scope>compile</scope>
             </dependency>
             <dependency>
+                <groupId>com.google.guava</groupId>
+                <artifactId>guava</artifactId>
+                <version>15.0</version>
+            </dependency>
+            <dependency>
                 <groupId>org.loadui</groupId>
                 <artifactId>testFx</artifactId>
-                <version>3.0.0-beta1</version>
-                <scope>test</scope>
+                <version>3.0.0</version>
             </dependency>
             <dependency>
                 <groupId>org.hamcrest</groupId>
@@ -53,7 +57,6 @@
                 <groupId>junit</groupId>
                 <artifactId>junit</artifactId>
                 <version>4.11</version>
-                <scope>test</scope>
                 <exclusions>
                     <exclusion>
                         <groupId>org.hamcrest</groupId>
@@ -69,17 +72,30 @@
             <groupId>log4j</groupId>
             <artifactId>log4j</artifactId>
         </dependency>
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <scope>test</scope>
-        </dependency>
+
         <dependency>
             <groupId>org.loadui</groupId>
             <artifactId>testFx</artifactId>
             <scope>test</scope>
         </dependency>
-
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.hamcrest</groupId>
+            <artifactId>hamcrest-all</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.hamcrest</groupId>
+                    <artifactId>hamcrest-core</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
 
     </dependencies>
 
@@ -128,7 +144,7 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>2.16</version>
                 <configuration>
-                    <forkMode>always</forkMode>
+                    <!--<forkMode>always</forkMode>-->
                 </configuration>
             </plugin>
             <plugin>
